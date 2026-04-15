@@ -1,0 +1,127 @@
+[
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Russia has completely cut off natural gas supplies to Poland and Bulgaria, citing non-payment in rubles.",
+    "output": "{\"risk_score\": 8, \"region\": \"Eastern Europe\", \"category\": \"Energy Security\", \"impact\": \"High\", \"analysis\": \"The supply cutoff directly destabilizes energy markets across Central and Eastern Europe. Investors with exposure to European utilities, fertilizer producers, and energy-intensive industrials face elevated downside risk. ETFs tracking the DAX and WIG20 are particularly vulnerable given Germany and Poland's historical dependency on Russian pipeline gas. Consider reducing exposure to MSCI Europe energy-heavy constituents until alternative supply routes are confirmed.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "China has announced a naval blockade exercise around Taiwan, halting commercial shipping through the Taiwan Strait for 72 hours.",
+    "output": "{\"risk_score\": 9, \"region\": \"East Asia\", \"category\": \"Trade Disruption\", \"impact\": \"Critical\", \"analysis\": \"A blockade of the Taiwan Strait threatens approximately 40% of global container shipping and over 90% of advanced semiconductor production. European investors with exposure to technology ETFs, automotive sector funds, and consumer electronics manufacturers face severe supply chain disruption risk. The MSCI World Technology index and European semiconductor equipment firms such as ASML are directly in the blast radius. Short-term volatility is near-certain; medium-term impact depends on blockade duration and US military response.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "The Houthi movement in Yemen has begun attacking commercial shipping in the Red Sea, forcing major carriers to reroute around the Cape of Good Hope.",
+    "output": "{\"risk_score\": 7, \"region\": \"Middle East\", \"category\": \"Trade Disruption\", \"impact\": \"High\", \"analysis\": \"Rerouting through the Cape of Good Hope adds 10-14 days and significant fuel costs to Europe-Asia shipping routes. This feeds directly into European consumer inflation via higher import prices on goods, electronics, and raw materials. Investors should monitor exposure to European retailers with Asian supply chains and logistics companies. Energy shipping ETFs may benefit short-term. The Suez Canal handles roughly 12% of global trade, making this a systemic rather than isolated risk.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "The United States has imposed 25% tariffs on all European steel and aluminum exports, citing national security concerns.",
+    "output": "{\"risk_score\": 6, \"region\": \"Transatlantic\", \"category\": \"Trade War\", \"impact\": \"High\", \"analysis\": \"US tariffs on European steel and aluminum directly compress margins for European producers including ArcelorMittal and Thyssenkrupp. Downstream manufacturers in automotive and construction face input cost increases. The EU is likely to retaliate with targeted tariffs on US goods, creating a bilateral trade friction cycle. Investors holding European industrial ETFs or individual steel producers should expect earnings downgrades. The broader EUROSTOXX 50 may see 2-4% headwinds depending on escalation pace.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Niger's military junta has expelled French troops and suspended uranium export agreements with France and the EU.",
+    "output": "{\"risk_score\": 7, \"region\": \"West Africa\", \"category\": \"Resource Security\", \"impact\": \"High\", \"analysis\": \"Niger supplies approximately 15% of EU uranium imports, critical for French nuclear power generation which underpins European grid stability. Suspension of export agreements tightens uranium supply at a time when European energy policy is reconsidering nuclear as a transition fuel. Uranium spot prices will likely rise. Investors in European utilities with nuclear exposure, particularly EDF and Engie, face input cost pressure. Broader Sahel instability also threatens EU migration and security frameworks, adding political risk to economic exposure.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Serbia and Kosovo have exchanged gunfire along the northern border, with NATO peacekeepers on high alert.",
+    "output": "{\"risk_score\": 6, \"region\": \"Western Balkans\", \"category\": \"Regional Conflict\", \"impact\": \"Moderate\", \"analysis\": \"Armed escalation in the Western Balkans introduces direct instability in a region bordering EU member states. While direct economic exposure is limited, the risk of NATO involvement and refugee flows into Hungary, Croatia, and Austria creates secondary political pressure on EU governance. Investors with exposure to Balkan infrastructure bonds or frontier market ETFs covering the region should reduce positions. The broader impact on eurozone sentiment is modest unless escalation pulls in Russia or Turkey.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Iran has seized a commercial oil tanker in the Strait of Hormuz in retaliation for Western sanctions.",
+    "output": "{\"risk_score\": 8, \"region\": \"Middle East\", \"category\": \"Energy Security\", \"impact\": \"High\", \"analysis\": \"The Strait of Hormuz is the transit point for roughly 20% of global oil supply. A confirmed Iranian interdiction of commercial shipping escalates oil price risk immediately. Brent crude will likely spike 5-10% on confirmed seizure. European investors with energy sector underweights face opportunity cost; those in airlines, chemicals, and plastics manufacturing face margin compression. If the US responds militarily, the risk escalates to Critical. Consider short-term hedges via energy commodity ETFs.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Turkey has blocked Sweden's NATO accession by vetoing it in the NATO Parliamentary Assembly, citing arms sales disputes.",
+    "output": "{\"risk_score\": 4, \"region\": \"Europe\", \"category\": \"Alliance Cohesion\", \"impact\": \"Moderate\", \"analysis\": \"Turkish obstruction of Swedish NATO accession introduces friction into transatlantic security architecture without immediate economic consequences. The primary risk is long-term: weakened NATO cohesion emboldens revisionist actors in Eastern Europe. Swedish defense spending will accelerate regardless, benefiting Saab and domestic defense contractors. Investors in European defense ETFs may see marginal upside. The broader market impact is limited unless the veto becomes permanent and triggers a structural realignment of Nordic security arrangements.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "A cyberattack attributed to a state actor has disabled power grid infrastructure in three Baltic states simultaneously.",
+    "output": "{\"risk_score\": 9, \"region\": \"Northern Europe\", \"category\": \"Cyber Warfare\", \"impact\": \"Critical\", \"analysis\": \"A coordinated state-level cyberattack on Baltic power infrastructure represents a direct act of hybrid warfare against NATO member states. Article 5 implications are immediate and real. European markets will reprice defense and cybersecurity risk instantly. Investors should expect sharp volatility in European tech and utilities. Defense sector ETFs and cybersecurity firms will likely outperform. The scenario also accelerates Baltic grid decoupling from the BRELL network, benefiting European grid interconnection infrastructure firms.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "China has imposed export restrictions on gallium and germanium, two critical materials used in semiconductor and defense manufacturing.",
+    "output": "{\"risk_score\": 8, \"region\": \"East Asia\", \"category\": \"Resource Security\", \"impact\": \"High\", \"analysis\": \"China controls over 80% of global gallium production and 60% of germanium. Export restrictions on these materials directly impact European semiconductor equipment manufacturers, defense contractors, and solar panel producers. ASML, Infineon, and ST Microelectronics face supply chain disruption. The EU's Critical Raw Materials Act is relevant but offers no short-term relief. Investors should reduce exposure to European fabless semiconductor firms and increase attention to alternative sourcing ETFs covering Canada and Australia.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "The Democratic Republic of Congo has nationalized its cobalt mining sector, expelling foreign operators including European companies.",
+    "output": "{\"risk_score\": 7, \"region\": \"Central Africa\", \"category\": \"Resource Security\", \"impact\": \"High\", \"analysis\": \"The DRC produces roughly 70% of global cobalt, essential for EV battery manufacturing. Nationalization and expulsion of foreign operators creates immediate supply uncertainty for European automotive manufacturers transitioning to electric vehicles. BMW, Volkswagen, and Stellantis face battery input cost increases. European EV transition ETFs and battery materials funds are directly exposed. The long-term risk depends on whether the DRC can maintain production volumes under state control, which historically has been problematic in similar nationalization scenarios.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Hungary has vetoed the EU's 14th sanctions package against Russia, blocking asset freezes on 50 additional entities.",
+    "output": "{\"risk_score\": 5, \"region\": \"Europe\", \"category\": \"Political Fragmentation\", \"impact\": \"Moderate\", \"analysis\": \"Hungarian obstruction of EU sanctions reflects ongoing internal EU cohesion risk. While this specific veto has limited immediate market impact, it signals continued erosion of unified EU foreign policy capacity. The longer-term risk is that persistent internal vetoes reduce the credibility of EU sanctions as a geopolitical tool, weakening Europe's negotiating position globally. Investors in EU sovereign bonds should monitor Hungarian-EU institutional tensions as a proxy for political fragmentation risk. Impact on EUROSTOXX is minimal in isolation but cumulative over time.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Morocco has closed its border with Spain's Ceuta enclave and recalled its ambassador from Madrid over a diplomatic dispute.",
+    "output": "{\"risk_score\": 5, \"region\": \"North Africa\", \"category\": \"Migration and Border Security\", \"impact\": \"Moderate\", \"analysis\": \"Morocco-Spain border tensions historically instrumentalize migration as political leverage. A full border closure creates humanitarian pressure in Ceuta and risks triggering migration waves toward the Canary Islands and Spanish mainland. The economic impact on Spanish tourism and trade through Ceuta is direct but limited in scale. Broader EU-Morocco relations, including the critical phosphate trade and agricultural imports, are the real pressure points. Investors with Spanish market exposure should monitor escalation indicators. IBEX 35 sensitivity is moderate unless the dispute triggers agricultural trade restrictions.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Pakistan and India have exchanged artillery fire along the Line of Control in Kashmir for the third consecutive week, with both sides mobilizing reserve forces.",
+    "output": "{\"risk_score\": 7, \"region\": \"South Asia\", \"category\": \"Regional Conflict\", \"impact\": \"High\", \"analysis\": \"Sustained artillery exchange and reserve mobilization between two nuclear-armed states represents a serious escalation risk. European investors are exposed indirectly through global risk appetite suppression and potential disruption to South Asian supply chains, particularly in textiles, pharmaceuticals, and IT services. Indian equity ETFs will reprice risk downward. A full conventional war scenario, even without nuclear escalation, would trigger a global risk-off event affecting European equities broadly. Monitor for ceasefire signals from backchannel US or Chinese mediation.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Libya's eastern and western factions have resumed armed conflict, shutting down the El Sharara oil field which produces 300,000 barrels per day.",
+    "output": "{\"risk_score\": 6, \"region\": \"North Africa\", \"category\": \"Energy Security\", \"impact\": \"High\", \"analysis\": \"Libya supplies approximately 1% of global oil production but is a significant supplier to Italy and Southern Europe specifically. El Sharara shutdown removes 300,000 bpd from Mediterranean supply, tightening Brent crude spreads. Italian energy companies ENI and Southern European utilities face direct supply pressure. Brent may see a 3-5% upside until alternative supply compensates. European investors in Italian equities and Mediterranean-focused energy funds should treat this as an elevated near-term risk. Libya's chronic instability makes resolution timelines unpredictable.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "The United States has announced it will no longer guarantee Article 5 commitments to NATO members spending below 2% of GDP on defense.",
+    "output": "{\"risk_score\": 9, \"region\": \"Transatlantic\", \"category\": \"Alliance Cohesion\", \"impact\": \"Critical\", \"analysis\": \"A conditional Article 5 commitment fundamentally undermines the NATO security guarantee that has underwritten European stability since 1949. This is a structural repricing event for European defense risk. Countries spending below 2% GDP on defense, including Belgium, Spain, and Italy, face acute pressure to accelerate military expenditure. European defense ETFs and contractors including Rheinmetall, Leonardo, and BAE Systems will strongly outperform. Sovereign bonds of underspending NATO members may face yield pressure. This scenario accelerates European strategic autonomy efforts and EU defense integration regardless of US intent.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Ethiopia's Tigray conflict has resumed, blocking commercial flights over Ethiopian airspace and disrupting the Addis Ababa hub.",
+    "output": "{\"risk_score\": 4, \"region\": \"East Africa\", \"category\": \"Regional Conflict\", \"impact\": \"Low\", \"analysis\": \"Renewed conflict in Tigray creates humanitarian and logistical disruption but limited direct financial exposure for European retail investors. The primary impact is on European airlines using Addis Ababa as a transit hub for East Africa and Asia routes, with Lufthansa and Air France among affected carriers. African frontier market ETFs with Ethiopian exposure will reprice. The broader impact on European portfolios is marginal unless the conflict spreads to Eritrea or Somalia, which would complicate Red Sea and Horn of Africa shipping security.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Venezuela has militarily occupied the Essequibo region of Guyana, claiming historical sovereignty over the oil-rich territory.",
+    "output": "{\"risk_score\": 6, \"region\": \"Latin America\", \"category\": \"Resource Security\", \"impact\": \"Moderate\", \"analysis\": \"Guyana's Essequibo region contains significant offshore oil reserves developed in partnership with ExxonMobil, Shell, and Hess. Venezuelan military occupation threatens these operations directly. Shell's European investors face asset risk in the region. Global oil supply disruption is limited given Guyana's relatively small production share, but the precedent of state seizure of foreign energy assets has broader implications for resource nationalism risk globally. Latin American equity ETFs will reprice. A US military response in defense of Guyana is plausible given Monroe Doctrine precedent.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "North Korea has conducted its sixth nuclear test, with a yield estimated at 250 kilotons, and fired an ICBM over Japan.",
+    "output": "{\"risk_score\": 8, \"region\": \"East Asia\", \"category\": \"Nuclear Proliferation\", \"impact\": \"High\", \"analysis\": \"A high-yield nuclear test combined with ICBM demonstration is the most provocative North Korean escalation since 2017. Japanese equity markets will open sharply lower. The South Korean won and KOSPI will reprice risk immediately. European investors with Asian equity exposure face a global risk-off event lasting days to weeks. The scenario pressures China to act as mediator while increasing US military presence in the Pacific, which in turn draws US attention and resources away from European security commitments. Defense sector outperformance is near-certain.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Algeria has cut diplomatic ties with France and suspended the friendship treaty, threatening to restrict gas exports to Europe.",
+    "output": "{\"risk_score\": 7, \"region\": \"North Africa\", \"category\": \"Energy Security\", \"impact\": \"High\", \"analysis\": \"Algeria is Europe's third largest gas supplier, providing approximately 11% of EU gas imports via the Medgaz and Transmed pipelines. A threat to restrict exports, even if not immediately executed, will spike TTF gas futures and pressure European utility stocks. Italy is most directly exposed given its historical dependence on Algerian supply. ENI, Enel, and Italian industrial gas consumers face immediate margin pressure. The diplomatic rupture also threatens EU-Africa migration cooperation frameworks. Investors should monitor TTF futures as the primary risk indicator and consider defensive positioning in European utility ETFs.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "A military coup in Gabon has resulted in the suspension of oil export contracts with TotalEnergies.",
+    "output": "{\"risk_score\": 5, \"region\": \"Central Africa\", \"category\": \"Political Instability\", \"impact\": \"Moderate\", \"analysis\": \"Gabon produces approximately 200,000 barrels per day, modest by global standards but significant for TotalEnergies which holds major concessions there. Contract suspension introduces asset impairment risk for TotalEnergies shareholders. The broader oil market impact is limited. The coup follows a pattern of Sahel and Central African military takeovers that collectively signal rising resource nationalism risk across Francophone Africa. Investors holding TotalEnergies directly should monitor concession negotiation outcomes. Broader European energy ETF impact is contained unless the coup triggers a wider Francophone Africa instability cascade.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Poland has announced it will deploy 50,000 troops to its eastern border with Belarus following intelligence reports of Wagner Group movements.",
+    "output": "{\"risk_score\": 7, \"region\": \"Eastern Europe\", \"category\": \"Regional Conflict\", \"impact\": \"High\", \"analysis\": \"Polish military mobilization on the Belarusian border signals a serious deterioration in the security environment on NATO's eastern flank. This is not yet an armed conflict but represents the highest peacetime military alert in Central Europe since the Cold War. European defense stocks will rally. Polish zloty and sovereign bonds may face pressure from fiscal defense spending acceleration. The scenario validates continued NATO reinforcement of the eastern flank and benefits Rheinmetall, KNDS, and Polish defense procurement. Investors in CEE equity funds should treat this as an elevated geopolitical premium event.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "Saudi Arabia has announced it will price a portion of its oil exports in Chinese yuan rather than US dollars exclusively.",
+    "output": "{\"risk_score\": 6, \"region\": \"Middle East\", \"category\": \"Currency and Trade\", \"impact\": \"Moderate\", \"analysis\": \"A Saudi shift toward yuan-denominated oil pricing is a structural challenge to petrodollar dominance, but the near-term market impact is moderate. The euro benefits indirectly from any erosion of dollar hegemony in commodity pricing. European investors should monitor USD weakness as a secondary effect. The primary risk for European portfolios is increased volatility in oil price discovery mechanisms and potential long-term shifts in global reserve currency composition. This is a slow-moving structural trend rather than an immediate shock, but it warrants attention in any multi-year portfolio construction framework.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "The European Court of Justice has ruled that Poland's judicial reforms violate EU treaty law, triggering a constitutional crisis and threatening Poland's access to EU recovery funds.",
+    "output": "{\"risk_score\": 5, \"region\": \"Europe\", \"category\": \"Political Fragmentation\", \"impact\": \"Moderate\", \"analysis\": \"An ECJ ruling triggering Polish fund access suspension removes a significant fiscal stimulus from the largest Central European economy. Polish GDP growth will be revised downward if recovery funds are blocked. The PLN will face depreciation pressure. Investors in CEE equity ETFs and Polish sovereign bonds should reduce exposure until a political resolution is reached. The broader signal is that EU internal legal cohesion mechanisms create binary event risks for CEE market exposure. The scenario also tests EU institutional credibility in enforcing rule of law conditions, with implications for Hungary and other member states under similar proceedings.\"}"
+  },
+  {
+    "instruction": "Analyze the geopolitical risk of the following situation for European retail investors.",
+    "input": "A large-scale cyberattack has compromised SWIFT interbank messaging infrastructure, temporarily halting cross-border transactions between 12 European banks.",
+    "output": "{\"risk_score\": 9, \"region\": \"Europe\", \"category\": \"Cyber Warfare\", \"impact\": \"Critical\", \"analysis\": \"A successful attack on SWIFT infrastructure represents systemic risk to the European financial system. Cross-border payment halts between major banks will trigger immediate liquidity stress events and potential margin calls across European financial markets. Equity markets will open with circuit breaker risk. The ECB and national central banks will activate emergency liquidity facilities. Investors should expect sharp drawdowns in European financial sector ETFs and flight to safety in German bunds. Attribution to a state actor, if confirmed, triggers EU cyber retaliation frameworks and potential Article 42 TEU collective defense considerations. This is a tail risk scenario with cascading systemic consequences.\"}"
+  }
+]
