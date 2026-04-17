@@ -18,9 +18,11 @@ Use this skill when documentation needs to stay aligned with the repository.
 ## What to Check
 
 - `docs/README.md` stays current as the docs entry point.
-- `docs/ARCHITECTURE.md` matches the actual repo layout.
-- `docs/DATASET_WORKFLOW.md` matches the current dataset rules.
-- `docs/FINETUNING_NOTES.md` matches the notebook behavior.
+- `docs/guides/README.md` stays current as the workflow guide index.
+- `docs/guides/ARCHITECTURE.md` matches the actual repo layout.
+- `docs/guides/DATASET_WORKFLOW.md` matches the current dataset rules.
+- `docs/guides/FINETUNING_NOTES.md` matches the notebook behavior.
+- `docs/guardrails/README.md` stays current for customization assets.
 - New workflow files are documented before the repo grows further.
 
 ## Procedure

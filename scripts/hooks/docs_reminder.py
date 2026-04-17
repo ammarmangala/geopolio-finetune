@@ -5,8 +5,8 @@ import sys
 
 
 MESSAGE = (
-    "Check docs/README.md, docs/ARCHITECTURE.md, docs/DATASET_WORKFLOW.md, and "
-    "docs/FINETUNING_NOTES.md before changing workflow code."
+    "Check docs/README.md, docs/guides/ARCHITECTURE.md, docs/guides/DATASET_WORKFLOW.md, "
+    "and docs/guides/FINETUNING_NOTES.md before changing workflow code."
 )
 
 

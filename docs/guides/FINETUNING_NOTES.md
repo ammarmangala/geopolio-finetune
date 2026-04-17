@@ -31,6 +31,7 @@ The notebook should use:
 `data/geopolio_dataset_5000s_global_multidecade_balanced.json`
 
 The notebook currently splits the dataset into:
+
 - `train_dataset`
 - `eval_dataset`
 
@@ -43,6 +44,7 @@ eval_dataset = split["test"]
 ```
 
 That means:
+
 - `90%` of the data is used for training
 - `10%` is held out for evaluation
 
@@ -106,6 +108,7 @@ If Colab or another notebook runtime resets, anything not saved is lost.
 That is why the notebook should keep checkpoints enabled and save a final model directory.
 
 The final model should include both:
+
 - model weights
 - tokenizer files
 

@@ -646,6 +646,7 @@ def build_pool(samples: list[dict]) -> dict[tuple[str, str, int], list[dict]]:
 
 def generate_new_sample(category: str, region: str, score: int, variant: int) -> dict:
     details = REGION_DETAILS[region]
+    category_info = CATEGORY_DETAILS[category]
     scenario = random.choice(REGION_TEMPLATES).format(
         year=random.choice(YEAR_BUCKETS),
         actor=random.choice(details["actors"]),
@@ -658,7 +659,7 @@ def generate_new_sample(category: str, region: str, score: int, variant: int) ->
         "region": region,
         "category": category,
         "impact": impact_from_score(score),
-        "analysis": build_analysis(region, category, score, CATEGORY_CHANNELS[category]),
+        "analysis": build_analysis(region, category, score, category_info["channel"]),
     }
     return {
         "instruction": INSTRUCTION,

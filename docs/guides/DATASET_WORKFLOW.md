@@ -13,6 +13,7 @@ Use this file for training:
 `data/geopolio_dataset_5000s_global_multidecade_balanced.json`
 
 Why this file is the default:
+
 - `5000` samples
 - `5000` unique inputs
 - `0` duplicates
@@ -23,26 +24,31 @@ Why this file is the default:
 ## Other dataset files
 
 `data/geopolio_dataset_5000s_global_multidecade.json`
+
 - first expanded dataset
 - useful as an intermediate artifact
 - not fully balanced
 
 `data/geopolio_dataset_5000s_global_multidecade.checkpoint.json`
+
 - generation checkpoint
 - not a final training file
 
 `data/geopolio_dataset_5000s_global_multidecade_balanced.json`
+
 - final balanced training dataset
 - use this for finetuning
 
 ## Scripts
 
 `scripts/generation/expand_dataset_to_target.py`
+
 - expands a source dataset locally to a target size
 - does not require an API key
 - writes a new output dataset and checkpoint
 
 `scripts/generation/rebalance_dataset.py`
+
 - normalizes category labels
 - balances categories, regions, and risk scores
 - writes a new balanced dataset
@@ -56,6 +62,7 @@ py scripts\generation\expand_dataset_to_target.py --target-size 5000
 ```
 
 Outputs:
+
 - `data/geopolio_dataset_5000s_global_multidecade.json`
 - `data/geopolio_dataset_5000s_global_multidecade.checkpoint.json`
 
@@ -66,11 +73,13 @@ py scripts\generation\rebalance_dataset.py
 ```
 
 Output:
+
 - `data/geopolio_dataset_5000s_global_multidecade_balanced.json`
 
 ## What balanced means here
 
 For `5000` samples:
+
 - `12` categories cannot divide evenly, so each category should appear `416` or `417` times
 - `18` regions cannot divide evenly, so each region should appear `277` or `278` times
 - `10` risk scores divide evenly, so each score should appear exactly `500` times
