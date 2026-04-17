@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "py scripts\\hooks\\docs_reminder.py",
+        "timeout": 5
+      }
+    ]
+  }
+}

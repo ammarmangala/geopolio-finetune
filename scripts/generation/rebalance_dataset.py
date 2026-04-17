@@ -14,6 +14,15 @@ For risk scores 1-10, 5000 is divisible by 10, so the default target is exactly
 
 from __future__ import annotations
 
+from _bootstrap import ensure_src_path
+
+ensure_src_path()
+
+if __name__ == "__main__":
+    from geopolio.commands import rebalance_dataset_main
+
+    raise SystemExit(rebalance_dataset_main())
+
 import argparse
 import json
 import random

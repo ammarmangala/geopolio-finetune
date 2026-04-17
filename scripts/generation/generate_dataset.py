@@ -4,6 +4,15 @@ Generates a balanced geopolitical risk dataset via OpenAI API.
 Target: 5000 samples across all categories, regions, and decades.
 """
 
+from _bootstrap import ensure_src_path
+
+ensure_src_path()
+
+if __name__ == "__main__":
+    from geopolio.commands import generate_dataset_main
+
+    raise SystemExit(generate_dataset_main())
+
 import json
 import time
 import random

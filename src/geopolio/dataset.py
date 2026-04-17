@@ -1,27 +1,11 @@
-"""
-Extend an existing Geopolio dataset to a target size without external APIs.
-
-The script reads a source dataset, generates additional synthetic samples locally,
-and writes the expanded result to a new file in `data/`.
-"""
+"""Shared dataset constants and helpers for the Geopolio workflow."""
 
 from __future__ import annotations
 
-from _bootstrap import ensure_src_path
-
-ensure_src_path()
-
-if __name__ == "__main__":
-    from geopolio.commands import expand_dataset_main
-
-    raise SystemExit(expand_dataset_main())
-
-import argparse
 import json
 import random
 from collections import Counter
 from pathlib import Path
-from typing import Iterable
 
 
 INSTRUCTION = "Analyze the geopolitical risk of the following situation for European retail investors."
@@ -152,6 +136,8 @@ REGION_DETAILS = {
         "sectors": ["satellites", "defense electronics", "telecom networks", "navigation services"],
     },
 }
+
+REGIONS = list(REGION_DETAILS.keys())
 
 CATEGORY_DETAILS = {
     "Energy Security": {
@@ -321,23 +307,110 @@ DECADES = [
     },
 ]
 
+GENERATION_DECADES = [
+    (
+        "2000-2010",
+        [
+            "9/11 economic aftermath and War on Terror impact on markets",
+            "2003 Iraq War and oil price shock",
+            "2004-2007 EU enlargement with Poland and Baltic states",
+            "2006 Russia-Ukraine gas dispute",
+            "2007 Estonia cyberattack by Russia",
+            "2007-2008 Global financial crisis and Lehman Brothers",
+            "2008 Russia-Georgia war over South Ossetia",
+            "2005 Hurricane Katrina oil supply disruption",
+            "2004 Madrid bombings economic impact",
+            "2009 Dubai World debt crisis",
+            "2001 Argentina sovereign default",
+            "2003 SARS outbreak supply chain disruption",
+            "2006 Israel-Lebanon war shipping disruption",
+            "2008 Zimbabwe hyperinflation contagion fears",
+            "2009 Greek debt crisis early signs",
+        ],
+    ),
+    (
+        "2010-2020",
+        [
+            "2010 Greek sovereign debt crisis and eurozone contagion",
+            "2011 Arab Spring and North African instability",
+            "2011 Fukushima nuclear disaster supply chain impact",
+            "2012 Iran nuclear sanctions and oil embargo",
+            "2013 Cyprus banking crisis and bail-in",
+            "2014 Russia annexation of Crimea and Ukraine crisis",
+            "2015 Greek debt referendum and Grexit fears",
+            "2016 Brexit referendum shock",
+            "2016 Turkey coup attempt and lira crisis",
+            "2017 Qatar diplomatic blockade by Gulf states",
+            "2018 US-China trade war tariffs",
+            "2019 Hong Kong protests and Chinese market impact",
+            "2019 Saudi Aramco drone attack",
+            "2015 Refugee crisis and European border tensions",
+            "2018 Italian populist government bond crisis",
+        ],
+    ),
+    (
+        "2020-2024",
+        [
+            "2020 COVID-19 pandemic supply chain collapse",
+            "2021 Suez Canal Ever Given blockage",
+            "2021 Belarus migrant crisis at Polish border",
+            "2022 Russia invasion of Ukraine energy crisis",
+            "2022 Nord Stream pipeline sabotage",
+            "2022 Taiwan Strait military exercises",
+            "2023 Houthi Red Sea shipping attacks",
+            "2023 Wagner Group mutiny in Russia",
+            "2023 Israel-Hamas war regional escalation",
+            "2024 Chinese rare earth export restrictions",
+            "2024 US chip export controls on ASML",
+            "2023 Niger coup and Sahel instability",
+            "2022 Sri Lanka sovereign default",
+            "2023 Silicon Valley Bank collapse contagion",
+            "2024 EU Carbon Border Adjustment Mechanism",
+        ],
+    ),
+]
+
+EXAMPLE = {
+    "instruction": INSTRUCTION,
+    "input": "Russia has completely cut off natural gas supplies to Poland and Bulgaria, citing non-payment in rubles.",
+    "output": "{\"risk_score\": 8, \"region\": \"Eastern Europe\", \"category\": \"Energy Security\", \"impact\": \"High\", \"analysis\": \"The supply cutoff directly destabilizes energy markets across Central and Eastern Europe. Investors with exposure to European utilities and energy-intensive industrials face elevated downside risk. ETFs tracking the DAX and WIG20 are particularly vulnerable given Germany and Poland's historical dependency on Russian pipeline gas. Consider reducing exposure to MSCI Europe energy-heavy constituents until alternative supply routes are confirmed.\"}",
+}
+
+REGION_TEMPLATES = [
+    "In {year}, {actor} triggered a {category_lower} shock in {region}, forcing European investors to reassess regional exposure {modifier}.",
+    "During {year}, {actor} intensified a {category_lower} event across {region}, creating fresh market uncertainty for European portfolios {modifier}.",
+    "In {year}, {actor} escalated a {category_lower} scenario in {region}, increasing risk for Europe-linked sectors and indices {modifier}.",
+    "During {year}, {actor} pushed a {category_lower} dispute in {region}, causing European investors to revisit sector allocations {modifier}.",
+]
+
+YEAR_BUCKETS = [2003, 2006, 2008, 2011, 2014, 2016, 2019, 2021, 2023, 2024]
+SCENARIO_MODIFIERS = [
+    "after emergency cabinet talks",
+    "after sanctions negotiations broke down",
+    "after insurers repriced regional risk",
+    "after trade officials failed to reach a compromise",
+    "after security warnings disrupted investor sentiment",
+    "after cross-border tensions hit logistics planning",
+    "after commodity buyers started panic procurement",
+    "after several European firms issued exposure warnings",
+    "after transport operators cut guidance",
+    "after policymakers warned of second-round market effects",
+]
+
+CATEGORY_ALIASES = {
+    "Trade War": "Trade Disruption",
+    "Trade Policy": "Trade Disruption",
+    "Currency and Trade": "Financial Contagion",
+    "Political Instability": "Political Fragmentation",
+    "Geopolitical Realignment": "Alliance Cohesion",
+}
+
 SCENARIO_TEMPLATES = [
     "In {year}, {actor} {trigger} in {region}, {context}.",
     "During {year}, {actor} {trigger} across {region}, {context}.",
     "In {year}, {actor} {trigger}, creating renewed instability in {region} {context}.",
     "During {year}, {actor} {trigger}, raising market stress across {region} {context}.",
 ]
-
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Expand an existing Geopolio dataset locally.")
-    parser.add_argument("--source", default="data/geopolio_dataset_2099s_global_multidecade.json")
-    parser.add_argument("--output", default="data/geopolio_dataset_5000s_global_multidecade.json")
-    parser.add_argument("--checkpoint", default="data/geopolio_dataset_5000s_global_multidecade.checkpoint.json")
-    parser.add_argument("--target-size", type=int, default=5000)
-    parser.add_argument("--batch-size", type=int, default=100)
-    parser.add_argument("--seed", type=int, default=42)
-    return parser.parse_args()
 
 
 def load_json(path: Path) -> list[dict]:
@@ -358,7 +431,7 @@ def normalize_key(sample: dict) -> str:
     return sample["input"].strip().lower()[:180]
 
 
-def deduplicate(samples: Iterable[dict]) -> list[dict]:
+def deduplicate(samples: list[dict]) -> list[dict]:
     seen: set[str] = set()
     unique: list[dict] = []
     for sample in samples:
@@ -481,73 +554,226 @@ def build_sample(region: str, category: str) -> dict:
     }
 
 
-def load_seed_samples(source: Path, checkpoint: Path) -> list[dict]:
-    source_samples = deduplicate(load_json(source))
-    if checkpoint.exists():
-        resumed = deduplicate(load_json(checkpoint))
-        if len(resumed) >= len(source_samples):
-            return resumed
-    return source_samples
+def quota_map(items: list, total: int) -> dict:
+    base, remainder = divmod(total, len(items))
+    return {item: base + (1 if index < remainder else 0) for index, item in enumerate(items)}
 
 
-def extend_samples(samples: list[dict], target_size: int, batch_size: int, checkpoint: Path) -> list[dict]:
-    while len(samples) < target_size:
-        category_counts, region_counts = summarize_distribution(samples)
-        generated: list[dict] = []
-        attempts = 0
-
-        while len(generated) < min(batch_size, target_size - len(samples)) and attempts < batch_size * 20:
-            attempts += 1
-            category = pick_underrepresented(category_counts, CATEGORIES)
-            region = pick_underrepresented(region_counts, list(REGION_DETAILS))
-            sample = build_sample(region=region, category=category)
-            merged = deduplicate([*samples, *generated, sample])
-            if len(merged) == len(samples) + len(generated) + 1 and validate_sample(sample):
-                generated.append(sample)
-                category_counts[category] += 1
-                region_counts[region] += 1
-
-        if not generated:
-            raise RuntimeError("Could not generate additional unique samples.")
-
-        samples = deduplicate([*samples, *generated])
-        save_json(checkpoint, samples)
-        print(f"Added {len(generated)} samples | total {len(samples)}/{target_size}")
-
-    return samples[:target_size]
+def canonical_category(category: str) -> str | None:
+    if category in CATEGORIES:
+        return category
+    return CATEGORY_ALIASES.get(category)
 
 
-def main() -> None:
-    args = parse_args()
-    random.seed(args.seed)
+def deduplicate_exact(samples: list[dict]) -> list[dict]:
+    seen: set[str] = set()
+    unique: list[dict] = []
+    for sample in samples:
+        key = sample["input"].strip().lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(sample)
+    return unique
 
-    source = Path(args.source)
-    output = Path(args.output)
-    checkpoint = Path(args.checkpoint)
 
-    if not source.exists():
-        raise FileNotFoundError(f"Source dataset not found: {source}")
+def normalize_sample(sample: dict) -> dict | None:
+    if not validate_sample(sample):
+        return None
 
-    samples = load_seed_samples(source, checkpoint)
-    samples = deduplicate([sample for sample in samples if validate_sample(sample)])
+    output = json.loads(sample["output"])
+    category = canonical_category(output["category"])
+    region = output["region"]
+    risk_score = output["risk_score"]
 
-    print(f"Loaded {len(samples)} samples from {source}")
+    if category is None or region not in REGION_DETAILS or not 1 <= risk_score <= 10:
+        return None
 
-    if len(samples) >= args.target_size:
-        final_samples = samples[: args.target_size]
-        save_json(output, final_samples)
-        print(f"Source already meets target. Wrote {len(final_samples)} samples to {output}")
-        return
+    output["category"] = category
+    output["impact"] = impact_from_score(risk_score)
 
-    final_samples = extend_samples(
-        samples=samples,
-        target_size=args.target_size,
-        batch_size=args.batch_size,
-        checkpoint=checkpoint,
+    normalized = dict(sample)
+    normalized["output"] = json.dumps(output, ensure_ascii=False)
+    return normalized
+
+
+def score_targets(total: int) -> dict[int, int]:
+    return quota_map(list(range(1, 11)), total)
+
+
+def generate_assignment_plan(target_size: int) -> list[tuple[str, str, int]]:
+    category_remaining = Counter(quota_map(CATEGORIES, target_size))
+    region_remaining = Counter(quota_map(list(REGION_DETAILS), target_size))
+    score_remaining = Counter(score_targets(target_size))
+
+    assignments: list[tuple[str, str, int]] = []
+    for _ in range(target_size):
+        category = max(
+            [item for item in CATEGORIES if category_remaining[item] > 0],
+            key=lambda item: (category_remaining[item], random.random()),
+        )
+        region = max(
+            [item for item in REGION_DETAILS if region_remaining[item] > 0],
+            key=lambda item: (region_remaining[item], random.random()),
+        )
+        score = max(
+            [item for item in range(1, 11) if score_remaining[item] > 0],
+            key=lambda item: (score_remaining[item], random.random()),
+        )
+
+        assignments.append((category, region, score))
+        category_remaining[category] -= 1
+        region_remaining[region] -= 1
+        score_remaining[score] -= 1
+
+    return assignments
+
+
+def sample_signature(sample: dict) -> tuple[str, str, int]:
+    output = json.loads(sample["output"])
+    return output["category"], output["region"], output["risk_score"]
+
+
+def build_pool(samples: list[dict]) -> dict[tuple[str, str, int], list[dict]]:
+    pool: dict[tuple[str, str, int], list[dict]] = {}
+    for sample in samples:
+        signature = sample_signature(sample)
+        pool.setdefault(signature, []).append(sample)
+    for items in pool.values():
+        random.shuffle(items)
+    return pool
+
+
+def generate_new_sample(category: str, region: str, score: int, variant: int) -> dict:
+    details = REGION_DETAILS[region]
+    scenario = random.choice(REGION_TEMPLATES).format(
+        year=random.choice(YEAR_BUCKETS),
+        actor=random.choice(details["actors"]),
+        category_lower=category.lower(),
+        region=region,
+        modifier=f"{random.choice(SCENARIO_MODIFIERS)}, case variant {variant}",
     )
-    save_json(output, final_samples)
-    print(f"Completed. Wrote {len(final_samples)} samples to {output}")
+    output = {
+        "risk_score": score,
+        "region": region,
+        "category": category,
+        "impact": impact_from_score(score),
+        "analysis": build_analysis(region, category, score, CATEGORY_CHANNELS[category]),
+    }
+    return {
+        "instruction": INSTRUCTION,
+        "input": scenario,
+        "output": json.dumps(output, ensure_ascii=False),
+    }
 
 
-if __name__ == "__main__":
-    main()
+def build_balanced_dataset(source_samples: list[dict], target_size: int) -> list[dict]:
+    plan = generate_assignment_plan(target_size)
+    pool = build_pool(source_samples)
+    result: list[dict] = []
+    used_inputs: set[str] = set()
+    variant = 1
+
+    for category, region, score in plan:
+        key = (category, region, score)
+        chosen = None
+
+        while pool.get(key):
+            candidate = pool[key].pop()
+            normalized_input = candidate["input"].strip().lower()
+            if normalized_input in used_inputs:
+                continue
+            chosen = candidate
+            break
+
+        if chosen is None:
+            for _ in range(50):
+                candidate = generate_new_sample(category, region, score, variant)
+                variant += 1
+                normalized_input = candidate["input"].strip().lower()
+                if normalized_input in used_inputs:
+                    continue
+                chosen = candidate
+                break
+
+        if chosen is None:
+            raise RuntimeError(f"Could not generate unique sample for {(category, region, score)}")
+
+        result.append(chosen)
+        used_inputs.add(chosen["input"].strip().lower())
+
+    balanced = deduplicate_exact(result)
+    if len(balanced) == target_size:
+        return balanced
+
+    missing = target_size - len(balanced)
+    variant = 100000
+    while len(balanced) < target_size:
+        category, region, score = plan[len(balanced)]
+        chosen = None
+        for _ in range(100):
+            candidate = generate_new_sample(category, region, score, variant)
+            variant += 1
+            normalized_input = candidate["input"].strip().lower()
+            if normalized_input in used_inputs:
+                continue
+            chosen = candidate
+            break
+        if chosen is None:
+            raise RuntimeError(f"Could not restore missing unique samples: missing {missing}")
+        balanced.append(chosen)
+        used_inputs.add(chosen["input"].strip().lower())
+
+    return balanced
+
+
+def report(samples: list[dict]) -> dict[str, dict]:
+    categories = Counter()
+    regions = Counter()
+    scores = Counter()
+    for sample in samples:
+        output = json.loads(sample["output"])
+        categories[output["category"]] += 1
+        regions[output["region"]] += 1
+        scores[output["risk_score"]] += 1
+    return {
+        "categories": dict(categories),
+        "regions": dict(regions),
+        "risk_scores": dict(scores),
+    }
+
+
+__all__ = [
+    "CATEGORY_ALIASES",
+    "CATEGORY_DETAILS",
+    "CATEGORIES",
+    "DECADES",
+    "EXAMPLE",
+    "GENERATION_DECADES",
+    "IMPACTS",
+    "INSTRUCTION",
+    "REGION_DETAILS",
+    "REGIONS",
+    "build_analysis",
+    "build_balanced_dataset",
+    "build_pool",
+    "build_sample",
+    "canonical_category",
+    "deduplicate",
+    "deduplicate_exact",
+    "generate_assignment_plan",
+    "generate_new_sample",
+    "impact_from_score",
+    "load_json",
+    "normalize_key",
+    "normalize_sample",
+    "pick_decade",
+    "pick_underrepresented",
+    "quota_map",
+    "report",
+    "save_json",
+    "sample_signature",
+    "score_targets",
+    "summarize_distribution",
+    "validate_sample",
+]
