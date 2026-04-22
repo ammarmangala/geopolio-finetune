@@ -119,6 +119,14 @@ Do not hardcode access tokens in the notebook.
 
 If `HF_TOKEN` is missing, the login step should be skipped instead of failing the whole notebook.
 
+## Testing the finetuned model
+
+After training, the notebook switches the model into inference mode with `FastLanguageModel.for_inference(model)`.
+It then runs a quick prompt check with `generate_response(prompt)` and a short list of manual test prompts.
+
+Those tests are for a qualitative smoke check only.
+Use them to see whether the model produces sensible geopolitical-risk answers before you export it.
+
 ## Basic notebook workflow
 
 1. Load model and tokenizer.
@@ -126,7 +134,8 @@ If `HF_TOKEN` is missing, the login step should be skipped instead of failing th
 3. Split into train and eval sets.
 4. Train with checkpoints enabled.
 5. Keep the best checkpoint.
-6. Save the final model and tokenizer.
+6. Switch to inference mode and run a quick smoke test.
+7. Save the final model and tokenizer.
 
 ## Common mistakes
 
