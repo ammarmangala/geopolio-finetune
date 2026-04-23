@@ -38,14 +38,18 @@ Use this skill when documentation needs to stay aligned with the repository.
 ## Output Format
 
 Return:
+
 - docs that need updates
 - why they are stale or missing
 - the minimum doc changes needed
 - whether the docs set is coherent after the update
+
 ---
+
 name: documentation-enforcer
 description: "Use when updating docs, adding new workflows, or checking whether repository docs still match the codebase."
 argument-hint: "Docs page, workflow, or area to document"
+
 ---
 
 # Documentation Enforcer
@@ -80,6 +84,7 @@ Use this skill when documentation needs to stay aligned with the repository.
 ## Output Format
 
 Return:
+
 - docs that need updates
 - why they are stale or missing
 - the minimum doc changes needed

@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "ardilis",
+        "projectKey": "ardilis_geopolio"
+    }
+}
